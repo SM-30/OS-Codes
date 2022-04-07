@@ -41,22 +41,22 @@ int main()
 		if(clock<p[i].at)
 		{
 			idle += p[i].at - clock;
-            if(clock)
-            {
-                idcst[d] = 1;
-                cst[d++] = clock;
-            }
+                        if(clock)
+                        {
+                              idcst[d] = 1;
+                              cst[d++] = clock;
+                         }
 			clock = p[i].at;
 			idcst[d] = 2;;
 		}
-        cst[d++] =  clock;
-        sort(i);
+                cst[d++] =  clock;
+                sort(i);
 		p[i].wait = clock - p[i].at;
 		p[i].turn = p[i].wait + p[i].bt;
 		totalwait += p[i].wait;
 		totalturn += p[i].turn;
 		clock += p[i].bt;
-        ++cs;
+                ++cs;
 	}
     cst[d++] = clock;
     ++cs;
